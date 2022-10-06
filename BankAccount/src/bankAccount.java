@@ -1,4 +1,8 @@
 public class bankAccount {
+    private double bilancio;
+    private static int id = 0;
+    private int accountNumber;
+    
     public bankAccount(double bilancioIniziale) {
         id++;
         accountNumber = id;
@@ -30,8 +34,4 @@ public class bankAccount {
     public int getAccountNumber() {
         return this.accountNumber;
     }
-
-    private double bilancio;
-    private static int id = 0;
-    private int accountNumber;
 }
