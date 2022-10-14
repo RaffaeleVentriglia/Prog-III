@@ -2,6 +2,7 @@ public class bankAccount {
     private double bilancio;
     private static int id = 0;
     private int accountNumber;
+    private int NumDepositi;
     
     public bankAccount(double bilancioIniziale) {
         id++;
@@ -16,6 +17,7 @@ public class bankAccount {
     public void deposit(double amount) {
         double newBalance = this.bilancio + amount;
         this.bilancio = newBalance;
+        NumDepositi++;
     }  
     
     public void withdraw(double amount) {
@@ -25,6 +27,10 @@ public class bankAccount {
             return;
         }
         this.bilancio = newBalance;
+    }
+
+    public int getNumDep() {
+        return this.NumDepositi;
     }
 
     public double getBalance() {

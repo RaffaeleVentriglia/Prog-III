@@ -1,7 +1,6 @@
-public class App {
+public class bankAccountTest {
     public static void main(String args[]) {
-        bankAccount account = new bankAccount();
-
+        bankAccount account = new bankAccount(); 
         System.out.println("Account Number: " + account.getAccountNumber());
         System.out.println("Saldo disponibile: " + account.getBalance());
         account.deposit(145.50);
@@ -14,6 +13,5 @@ public class App {
         account2.deposit(100);
         account2.addInterest();
         System.out.println("Saldo disponibile: " + account2.getBalance());
-
     }
 }
