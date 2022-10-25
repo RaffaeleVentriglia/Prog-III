@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 import java.io.IOException;
 
-public class App {
+public class PurseTest {
     public static void main(String[] args) throws IOException {
         Purse p1 = new Purse();
         int count;
