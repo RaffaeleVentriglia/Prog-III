@@ -1,4 +1,4 @@
-public class bankAccount {
+public class bankAccount implements Measurable{
     private double bilancio;
     private static int id = 0;
     private int accountNumber;
@@ -39,5 +39,10 @@ public class bankAccount {
 
     public int getAccountNumber() {
         return this.accountNumber;
+    }
+
+    @Override
+    public double getMeasure() {
+        return bilancio;
     }
 }
