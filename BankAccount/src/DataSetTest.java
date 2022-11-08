@@ -14,9 +14,9 @@ public class DataSetTest {
 
         DataSet bankData2 = new DataSet();
 
-        bankData2.add(new coin(20));
-        bankData2.add(new coin(800));
-        bankData2.add(new coin(400));
+        bankData2.add(new coin(20, "Carmine"));
+        bankData2.add(new coin(800, "Vincenzo"));
+        bankData2.add(new coin(400, "FrancescoCamastra"));
         max = bankData2.getMaximum();
 
         System.out.println("\nTotale dei soldi: " + bankData2.getSum());
