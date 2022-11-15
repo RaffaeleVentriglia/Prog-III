@@ -1,4 +1,4 @@
-public class bankAccount implements Measurable{
+public class bankAccount extends Exception implements Measurable {
     private double bilancio;
     private static int id = 0;
     private int accountNumber;
@@ -22,11 +22,15 @@ public class bankAccount implements Measurable{
     
     public void withdraw(double amount) {
         double newBalance = this.bilancio - amount;
-        if (newBalance <= 0) {
-            System.out.println("Errore, non ci sono abbastanza fondi");
-            return;
+        try {
+            if(newBalance <= 0) {
+                throw new NoFundsException();
+            } else {
+                this.bilancio = newBalance;
+            }
+        } catch (NoFundsException exc) {
+            System.out.println(exc.toString());
         }
-        this.bilancio = newBalance;
     }
 
     public int getNumDep() {

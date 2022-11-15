@@ -13,5 +13,10 @@ public class bankAccountTest {
         account2.deposit(100);
         account2.addInterest();
         System.out.println("Saldo disponibile: " + account2.getBalance());
+
+        // * prova dell'eccezione dei fondi mancanti
+        bankAccount bancarotta = new bankAccount();
+        bancarotta.deposit(10);
+        bancarotta.withdraw(20);
     }
 }
