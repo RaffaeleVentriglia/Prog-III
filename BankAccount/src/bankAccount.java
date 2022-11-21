@@ -1,3 +1,5 @@
+//import java.util.Currency;
+
 public class bankAccount extends Exception implements Measurable {
     private double bilancio;
     private static int id = 0;
@@ -48,5 +50,47 @@ public class bankAccount extends Exception implements Measurable {
     @Override
     public double getMeasure() {
         return bilancio;
+    }
+
+    private static double DOLLAR = 0.97;
+
+    public double convert() {
+        return getBalance() * DOLLAR;
+    }
+
+    CurrencyConverter JPYConverter = new CurrencyConverter() {
+        @Override
+        public double Convert(double value) {
+            return value * 139.96;
+        }
+        
+    };
+
+    CurrencyConverter GBPConverter = new CurrencyConverter() {
+        @Override
+        public double Convert(double value) {
+            return value * 0.85;
+        }
+    };
+
+    public double getJPY(double value) {return JPYConverter.Convert(value);}
+    public double getGBP(double value) {return GBPConverter.Convert(value);}
+
+    private EURConvert euro = new EURConvert();
+    public void ConvertTo(Currency value) {
+        switch(value) {
+            case EURO:
+                System.out.println("Convertito in Euro: " + euro.Convert(getBalance()));
+                break;
+            case STERLINE:
+                System.out.println("Convertito in Sterline: " + GBPConverter.Convert(getBalance()));
+                break;
+            case YEN:
+                System.out.println("Convertito in Yen: " + JPYConverter.Convert(getBalance()));
+                break;
+            default:
+                System.out.print("Conversione non consentita");
+                break;
+        }
     }
 }
